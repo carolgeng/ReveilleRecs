@@ -20,7 +20,9 @@ public class Panel extends JPanel implements  MouseListener, KeyListener{
 	//records the button name and the button locations
 	//the value is a size 4 array that has the (x, y) starting location and the length & height
 	private TreeMap<String, int[]> map;
-	//AggieLand
+	//Dining
+	//Landmarks
+	//Facilities
 	
 	public Panel() {
 		addKeyListener(this);
@@ -49,9 +51,6 @@ public class Panel extends JPanel implements  MouseListener, KeyListener{
 		g.drawRoundRect(getWidth()/20, getHeight()/13, getWidth()/3+50, getHeight()-2*getHeight()/15, 10, 10);
 		g.setColor(pastel_maroon);
 		g.fillRoundRect(getWidth()/20, getHeight()/13, getWidth()/3+50, getHeight()-2*getHeight()/15, 10, 10);
-		
-		int[] temp = {getWidth()/20, getHeight()/13, getWidth()/3+50, getHeight()-2*getHeight()/15};
-		map.put("AggieLand", temp);
 		
 		//cstat rectangle
 		g.setColor(Color.black);
@@ -86,8 +85,17 @@ public class Panel extends JPanel implements  MouseListener, KeyListener{
 		g.fillRoundRect(getWidth()/10, getHeight()/2+50, getWidth()/3-getWidth()/13, getHeight()/8, 30, 30);
 		g.fillRoundRect(getWidth()/10, getHeight()/3*2+50, getWidth()/3-getWidth()/13, getHeight()/8, 30, 30);
 		
-		//g.setColor(Color.white);
-		//g.drawString("Dining", ALLBITS, ABORT)
+		int[] temp = {getWidth()/10, getHeight()/3+50, getWidth()/3-getWidth()/13, getHeight()/8};
+		map.put("Dining", temp);
+		temp[1]=getHeight()/2+50;
+		map.put("Landmarks", temp);
+		temp[1]=getHeight()/3*2+50;
+		map.put("Facilities", temp);
+		
+		g.setColor(Color.white);
+		g.drawString("Dining", getWidth()/8, getHeight()/3+60+getHeight()/16);
+		g.drawString("Landmarks", getWidth()/8, getHeight()/2+60+getHeight()/16);
+		g.drawString("Facilities", getWidth()/8, getHeight()/3*2+60+getHeight()/16);
 		
 	}
 	
