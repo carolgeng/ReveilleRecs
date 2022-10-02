@@ -37,7 +37,8 @@ public class Panel extends JPanel implements  MouseListener, KeyListener{
 	 *3 = facilities 
 	 * */
 	private int food_page, food_select, ent_select, shop_select, fac_page, dine_select;
-	private BufferedImage campus, food_map, fuego, CJ, mojo, sharetea, korean, mess, eugene, aggiepark, escape, gstation, iceskating,lakebryan, jumping, safari, mall, csquare, warehouse, ao, maroonu, boutique, cstation, gym;
+	private BufferedImage campus, food_map, fuego, CJ, mojo, sharetea, korean, mess, eugene, aggiepark, escape, gstation, iceskating,lakebryan, jumping, safari;
+	private BufferedImage mall, csquare, warehouse, ao, maroonu, boutique, cstation, gym, hh;
 	private boolean begin;
 	private Font cursive, cursive2, exo_m, exo_r;
 	private TreeMap<Integer, BufferedImage> food_m, ent_m, shop_m;
@@ -86,6 +87,7 @@ public class Panel extends JPanel implements  MouseListener, KeyListener{
 			boutique=ImageIO.read(Panel.class.getResource("boutique.jpg"));
 			gym=ImageIO.read(Panel.class.getResource("gym.jpg"));
 			campus = ImageIO.read(Panel.class.getResource("campus.jpg"));
+			hh = ImageIO.read(Panel.class.getResource("hh.png"));
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 			//register the font
 			ge.registerFont(cursive);
@@ -140,7 +142,6 @@ public class Panel extends JPanel implements  MouseListener, KeyListener{
 		}
 		catch(IOException e) {}
 	}
-	
 	
 	public void paint(Graphics g) {
 		//Color cream=new Color(242, 239, 223);
@@ -210,7 +211,7 @@ public class Panel extends JPanel implements  MouseListener, KeyListener{
 		//g.setColor(maroon);
 		g.setColor(Color.white);
 		g.setFont(new Font("Dialog", Font.BOLD, 30));
-		g.drawString("R E V I E L L E   R E C S", getWidth()/5*2-30, getHeight()/20);
+		g.drawString("R E V E I L L E   R E C S", getWidth()/5*2-30, getHeight()/20);
 		g.drawLine(getWidth()/3-10, getHeight()/20+10, getWidth()/3*2-30, getHeight()/20+10);
 		
 		g.setColor(maroon);
@@ -271,6 +272,7 @@ public class Panel extends JPanel implements  MouseListener, KeyListener{
 		break;
 		
 		case 1:
+			 
 			g.setColor(mmaroon);
 			g.fillRect(0, 0, getWidth(), getHeight());
 			
@@ -390,91 +392,95 @@ public class Panel extends JPanel implements  MouseListener, KeyListener{
 			Color green = new Color(195, 221, 208);
 
 
-			g.setColor(green);
-			g.fillRect(0, 0, getWidth(), getHeight());
+ 			g.setColor(green);
+ 			g.fillRect(0, 0, getWidth(), getHeight());
 
-// 			try {
-// 				font = Font.createFont(Font.TRUETYPE_FONT, new File("Kitnoms-Regular.ttf")).deriveFont(150f);
-// 				GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-// 				ge.registerFont(font);
-// 				campus=ImageIO.read(Panel.class.getResource("hh.png"));
-// 			} catch (FontFormatException | IOException e1) {
-// 				// TODO Auto-generated catch block
-// 				e1.printStackTrace();
-// 			}
+ // 			try {
+ // 				font = Font.createFont(Font.TRUETYPE_FONT, new File("Kitnoms-Regular.ttf")).deriveFont(150f);
+ // 				GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+ // 				ge.registerFont(font);
+ // 				campus=ImageIO.read(Panel.class.getResource("hh.png"));
+ // 			} catch (FontFormatException | IOException e1) {
+ // 				// TODO Auto-generated catch block
+ // 				e1.printStackTrace();
+ // 			}
 
-			g.setFont(cursive);
-			g.setColor(Color.white);
-			g.drawString("Landscape", getWidth()*3/9, getHeight()/6);
+ 			g.setFont(cursive);
+ 			g.setColor(Color.white);
+ 			g.drawString("Landscape", getWidth()*3/9, getHeight()/6);
 
-			g.set(new Font("Monospace", Font.BOLD, 40));
-			g.drawString("o n    c a m p u s", getWidth()*6/15, getHeight()/4);
-
-
-			((Graphics2D) g).setStroke(new BasicStroke(6));
-			g.drawLine(30, getHeight()/4, getWidth()/3, getHeight()/4);
-			g.drawLine(getWidth()*2/3, getHeight()/4, getWidth()-30, getHeight()/4);
-
-			g.drawRoundRect(getWidth()/20, getHeight()*4/13, getWidth()/3+50, getHeight()*2/3 -10, 10, 10);
-
-			g.drawRoundRect(getWidth()/3+getWidth()/10+20, getHeight()*4/13, getWidth()/2+20, getHeight()*2/3 -10, 10, 10);
-
-			g.drawImage(campus, getWidth()/3+getWidth()/10+20, getHeight()*4/13, getWidth()/2+20, getHeight()*2/3 -10, null);
-			//MSC, Rudder, George Bush Library and Museum, Kyle Field, 12th Man, Corps of Cadets, The Gardens
-
-			g.setFont(new Font("Monospace", Font.BOLD, 20));
+ 			g.setFont(exo_m);
+ 			g.drawString("o n    c a m p u s", getWidth()*6/15, getHeight()/4);
 
 
-			g.drawString("Important Locations", getWidth()/18, getHeight()/40*15-10);
-			g.drawLine(getWidth()/18, getHeight()/40*15-3, getWidth()/8+85, getHeight()/40*15-3);
-			g.drawString("·  Memorial Student Center", getWidth()/18, getHeight()/80*33);
-			g.drawString("·  Kyle Field",getWidth()/18, getHeight()/80*36);
-			g.drawString("·  Texas A&M Rosenthal Meat Center",getWidth()/18, getHeight()/80*39);
-			g.drawString("·  Academic Plaza",getWidth()/18, getHeight()/80*42);
+ 			((Graphics2D) g).setStroke(new BasicStroke(6));
+ 			g.drawLine(30, getHeight()/4, getWidth()/3, getHeight()/4);
+ 			g.drawLine(getWidth()*2/3, getHeight()/4, getWidth()-30, getHeight()/4);
 
-	//		g.drawString("| Northside", getWidth()/4, getHeight()/80*33);
-	//		g.drawString("| Southside", getWidth()/4, getHeight()/80*36);
-	//		g.drawString("| Southside", getWidth()/4, getHeight()/80*39);
-			g.drawString("Landmarks",getWidth()/18, getHeight()/80*46);
-			g.drawLine(getWidth()/18, getHeight()/80*47-5, getWidth()/8, getHeight()/80*47-5);
-			g.drawString("·  Century Tree ",getWidth()/18, getHeight()/80*49);
-			g.drawString("·  Aggie Ring Statue      ",getWidth()/18, getHeight()/80*52);
-			g.drawString("·  George H.W. Bush Presidential Library      ",getWidth()/18, getHeight()/80*55);
-			g.drawString("·  Ford Hall of Champions   ",getWidth()/18, getHeight()/80*58);
+ 			((Graphics2D) g).setStroke(new BasicStroke(2));
+ 			g.drawRoundRect(getWidth()/20, getHeight()*4/13, getWidth()/3+50, getHeight()*2/3 -10, 10, 10);
 
-			g.drawString("Parks",getWidth()/18, getHeight()/80*61);
-			g.drawLine(getWidth()/18, getHeight()/80*62-5, getWidth()/9 - 30, getHeight()/80*62-5);
+ 			g.drawRoundRect(getWidth()/3+getWidth()/10+20, getHeight()*4/13, getWidth()/2+20, getHeight()*2/3 -10, 10, 10);
 
-			g.drawString("·  The Gardens		",getWidth()/18, getHeight()/80*64);
-			g.drawString("·  Aggie Park    ",getWidth()/18, getHeight()/80*67);
-			g.drawString("·  Texas A&M Research Park",getWidth()/18, getHeight()/80*70);
-			g.drawString("·  Eli Whiteley Medal of Honor Park     ",getWidth()/18, getHeight()/80*73);
-	//		g.drawString("| MSC", getWidth()/4, getHeight()/80*46);
-	//		g.drawString("| MSC", getWidth()/4, getHeight()/80*49);
-	//		g.drawString("| MSC", getWidth()/4, getHeight()/80*52);
-	//		g.drawString("| MSC", getWidth()/4, getHeight()/80*55);
-	//		g.drawString("| MSC | Polo Garage", getWidth()/4, getHeight()/80*58);
-	//		g.drawString("| MSC | Polo Garage", getWidth()/4, getHeight()/80*61);
-	//		g.drawString("| MSC	| Sbisa Underground", getWidth()/4, getHeight()/80*64);
-	//		g.drawString("| Sbisa Complex", getWidth()/4, getHeight()/80*67);
-	//		g.drawString("| Sbisa Complex", getWidth()/4, getHeight()/80*70);
-	//		g.drawString("| Pavilion", getWidth()/4, getHeight()/80*73);
+ 			g.drawImage(hh, getWidth()/3+getWidth()/10+20, getHeight()*4/13, getWidth()/2+20, getHeight()*2/3 -10, null);
+ 			//MSC, Rudder, George Bush Library and Museum, Kyle Field, 12th Man, Corps of Cadets, The Gardens
 
-	//		g.drawString(" 1 | 2", getWidth()/4, getHeight()/80*77);
-	//		g.drawString("·", getWidth()/4+5+4, getHeight()/80*76-2);
+ 			Font ft = exo_m.deriveFont(20f);
+ 			g.drawString("Important Locations", getWidth()/18, getHeight()/40*15-10);
+ 			g.drawString("Landmarks",getWidth()/18, getHeight()/80*46);
+ 			g.drawString("Parks",getWidth()/18, getHeight()/80*61);
+ 			
+ 			g.setFont(exo_r);
 
+ 			g.drawLine(getWidth()/18, getHeight()/40*15-3, getWidth()/80*20, getHeight()/40*15-3);
+ 			g.drawLine(getWidth()/18, getHeight()/80*47-5, getWidth()/80*13, getHeight()/80*47-5);
+ 			g.drawLine(getWidth()/18, getHeight()/80*62-5, getWidth()/80*9, getHeight()/80*62-5);
+ 			
+ 			g.drawString("·  Memorial Student Center", getWidth()/18, getHeight()/80*33);
+ 			g.drawString("·  Kyle Field",getWidth()/18, getHeight()/80*36);
+ 			g.drawString("·  Texas A&M Rosenthal Meat Center",getWidth()/18, getHeight()/80*39);
+ 			g.drawString("·  Academic Plaza",getWidth()/18, getHeight()/80*42);
+
+ 	//		g.drawString("| Northside", getWidth()/4, getHeight()/80*33);
+ 	//		g.drawString("| Southside", getWidth()/4, getHeight()/80*36);
+ 	//		g.drawString("| Southside", getWidth()/4, getHeight()/80*39);
+ 			
+ 			g.drawString("·  Century Tree ",getWidth()/18, getHeight()/80*49);
+ 			g.drawString("·  Aggie Ring Statue      ",getWidth()/18, getHeight()/80*52);
+ 			g.drawString("·  George H.W. Bush Presidential Library      ",getWidth()/18, getHeight()/80*55);
+ 			g.drawString("·  Ford Hall of Champions   ",getWidth()/18, getHeight()/80*58);
 
 
-			//button
-			g.fillOval(25, getHeight()-80, 75, 70);
-			g.setColor(green);
-		    Polygon arrowHead = new Polygon();  
-		    arrowHead.addPoint( 60,getHeight()-63);
-		    arrowHead.addPoint( 40, getHeight()-43);
-		    arrowHead.addPoint( 60,getHeight()-23);
-		    ((Graphics2D) g).setStroke(new BasicStroke(6));
-		    g.drawLine(60, getHeight()-43, 82, getHeight()-43);
-		    g.fillPolygon(arrowHead);
+ 			g.drawString("·  The Gardens		",getWidth()/18, getHeight()/80*64);
+ 			g.drawString("·  Aggie Park    ",getWidth()/18, getHeight()/80*67);
+ 			g.drawString("·  Texas A&M Research Park",getWidth()/18, getHeight()/80*70);
+ 			g.drawString("·  Eli Whiteley Medal of Honor Park     ",getWidth()/18, getHeight()/80*73);
+ 	//		g.drawString("| MSC", getWidth()/4, getHeight()/80*46);
+ 	//		g.drawString("| MSC", getWidth()/4, getHeight()/80*49);
+ 	//		g.drawString("| MSC", getWidth()/4, getHeight()/80*52);
+ 	//		g.drawString("| MSC", getWidth()/4, getHeight()/80*55);
+ 	//		g.drawString("| MSC | Polo Garage", getWidth()/4, getHeight()/80*58);
+ 	//		g.drawString("| MSC | Polo Garage", getWidth()/4, getHeight()/80*61);
+ 	//		g.drawString("| MSC	| Sbisa Underground", getWidth()/4, getHeight()/80*64);
+ 	//		g.drawString("| Sbisa Complex", getWidth()/4, getHeight()/80*67);
+ 	//		g.drawString("| Sbisa Complex", getWidth()/4, getHeight()/80*70);
+ 	//		g.drawString("| Pavilion", getWidth()/4, getHeight()/80*73);
+
+ 	//		g.drawString(" 1 | 2", getWidth()/4, getHeight()/80*77);
+ 	//		g.drawString("·", getWidth()/4+5+4, getHeight()/80*76-2);
+
+
+
+ 			//button
+ 			g.fillOval(25, getHeight()-80, 75, 70);
+ 			g.setColor(green);
+ 		    Polygon arrowHead = new Polygon();  
+ 		    arrowHead.addPoint( 60,getHeight()-63);
+ 		    arrowHead.addPoint( 40, getHeight()-43);
+ 		    arrowHead.addPoint( 60,getHeight()-23);
+ 		    ((Graphics2D) g).setStroke(new BasicStroke(6));
+ 		    g.drawLine(60, getHeight()-43, 82, getHeight()-43);
+ 		    g.fillPolygon(arrowHead);
 			
 			break;
 			
@@ -523,7 +529,7 @@ public class Panel extends JPanel implements  MouseListener, KeyListener{
 					g.fillOval(30, getHeight()/6, 100, 100);
 					g.setColor(mmaroon);
 					g.drawOval(30, getHeight()/6, 100, 100);
-					Polygon arrowHead = new Polygon();  
+					arrowHead = new Polygon();  
 				    arrowHead.addPoint(80, getHeight()/60*11);
 				    arrowHead.addPoint(50, getHeight()/120*29);
 				    arrowHead.addPoint(80, getHeight()/60*16);
@@ -535,7 +541,7 @@ public class Panel extends JPanel implements  MouseListener, KeyListener{
 			 		// ----- PAGE 1 (Facilities):
 					switch(fac_page) {
 					case 1:
-			 		Font ft = exo_m.deriveFont(25f);
+			 		ft = exo_m.deriveFont(25f);
 			 		g.setFont(ft);
 			 		g.setColor(mmaroon);
 			 		//g.setFont(new Font("Dialog", Font.PLAIN, 20)); // just so it'll run on mine RIP - ryan
@@ -588,7 +594,7 @@ public class Panel extends JPanel implements  MouseListener, KeyListener{
 			g.setColor(darkbrown);
 			g.drawString(" F o o d", getWidth()/30*10, getHeight()/8+10);
 			g.setFont(exo_m);
-			g.drawString("I N  C O L L E G E  S T A T I O N", getWidth()/30*11-2, getHeight()/4);
+			g.drawString("I N   C O L L E G E   S T A T I O N", getWidth()/30*11-2, getHeight()/4);
 			((Graphics2D) g).setStroke(new BasicStroke(6));
 			g.drawLine(40, getHeight()/4-10, getWidth()/3, getHeight()/4-10);
 			g.drawLine(getWidth()/24*16, getHeight()/4-10, getWidth()-30, getHeight()/4-10);
@@ -906,6 +912,10 @@ public class Panel extends JPanel implements  MouseListener, KeyListener{
 		}
 		//back arrow
 		else if(choice == 1 && x>25 && x<100 && y>getHeight()-80 && y<getHeight()-10) {
+			choice = 0;
+			reset();
+		}
+		else if(choice == 2 && x > 25 && x < 100 && y > getHeight()-80 && y < getHeight()-10) {
 			choice = 0;
 			reset();
 		}
