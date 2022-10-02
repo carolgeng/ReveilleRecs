@@ -28,17 +28,37 @@ public class Panel extends JPanel implements  MouseListener, KeyListener{
 	//Shopping = 6
 	
 	
-	private int choice = 0;
+	private int choice = 1;
 	/*1 = dining
 	 *2 = landmarks
 	 *3 = facilities 
 	 * */
+	
+	private Font cursive, cursive2, exo_m, exo_r;
 	
 	
 	public Panel() {
 		addKeyListener(this);
 		addMouseListener(this);
 	//	map = new TreeMap<>();
+		try {
+			cursive = Font.createFont(Font.TRUETYPE_FONT, new File("Autumn in November.ttf")).deriveFont(115f);
+			cursive2 = Font.createFont(Font.TRUETYPE_FONT, new File("Anydore.otf")).deriveFont(40f);
+			exo_m = Font.createFont(Font.TRUETYPE_FONT, new File("Exo-Bold.otf")).deriveFont(30f);
+			exo_r = Font.createFont(Font.TRUETYPE_FONT, new File("Exo-Regular.otf")).deriveFont(20f);
+	    GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+	    //register the font
+	    ge.registerFont(cursive);
+	    ge.registerFont(cursive2);
+	    ge.registerFont(exo_m);
+	    ge.registerFont(exo_r);
+		}
+		catch (IOException e) {
+		    e.printStackTrace();
+		} catch(FontFormatException e) {
+		    e.printStackTrace();
+		}
+		
 	}
 	
 	
@@ -50,6 +70,7 @@ public class Panel extends JPanel implements  MouseListener, KeyListener{
 		Color c = new Color(193, 133, 133); //maroon ish
 		Color gray = new Color(219,215,201);
 		Color gray_green = new Color(193, 201, 179);
+		Color mmaroon = new Color(128, 0, 0);
 		
 		switch(choice) {
 		
@@ -163,9 +184,51 @@ public class Panel extends JPanel implements  MouseListener, KeyListener{
 		break;
 		
 		case 1:
-			g.setColor(Color.MAGENTA);
+			g.setColor(mmaroon);
 			g.fillRect(0, 0, getWidth(), getHeight());
-		
+			
+			g.setFont(cursive);
+			g.setColor(Color.white);
+			g.drawString(" F o o d", getWidth()/30*10, getHeight()/8+10);
+			g.setFont(exo_m);
+			g.drawString("  O N 	      C A M P U S", getWidth()/30*12-5, getHeight()/4);
+			
+			((Graphics2D) g).setStroke(new BasicStroke(6));
+			g.drawLine(40, getHeight()/4-10, getWidth()/30*11+5, getHeight()/4-10);
+			g.drawLine(getWidth()/24*14+30, getHeight()/4-10, getWidth()-20, getHeight()/4-10);
+			
+			g.setColor(Color.white);
+			((Graphics2D) g).setStroke(new BasicStroke(2));
+			g.drawRect(60, getHeight()/30*9, getWidth()/2, getHeight()/20*13);
+			g.drawRect(getWidth()/20*11, getHeight()/30*9, getWidth()/30*12, getHeight()/20*13);
+			
+			g.setFont(exo_r);
+			g.drawString("Dining Halls:", getWidth()/18, getHeight()/40*15-20);
+			g.drawString("·  Sbisa", getWidth()/18, getHeight()/80*33);
+			g.drawString("·  Commons",getWidth()/18, getHeight()/80*36);
+			g.drawString("·  Duncans",getWidth()/18, getHeight()/80*39);
+			g.drawString("Retail Swipes:",getWidth()/18, getHeight()/2);
+			g.drawString("·  Cabo's Grill ",getWidth()/18, getHeight()/80*46);
+			g.drawString("·  Pom & Honey      ",getWidth()/18, getHeight()/80*49);
+			g.drawString("·  Rev's Grill      ",getWidth()/18, getHeight()/80*52);
+			g.drawString("·  Spin n Stone Pizza   ",getWidth()/18, getHeight()/80*55);
+			g.drawString("·  Panda Express        ",getWidth()/18, getHeight()/80*58);
+			g.drawString("·  Houston Street Sub",getWidth()/18, getHeight()/80*61);
+			g.drawString("·  Chick Fil A		",getWidth()/18, getHeight()/80*64);
+			g.drawString("·  Einstein's Bagels    ",getWidth()/18, getHeight()/80*67);
+			g.drawString("·  Copperhead Jack'sx",getWidth()/18, getHeight()/80*70);
+			g.drawString("·  The Grill     ",getWidth()/18, getHeight()/80*73);
+			g.drawString("| MSC", getWidth()/16*3+10, getHeight()/80*46);
+			g.drawString("| MSC", getWidth()/16*3+10, getHeight()/80*49);
+			g.drawString("| MSC", getWidth()/16*3+10, getHeight()/80*52);
+			g.drawString("| MSC", getWidth()/16*3+10, getHeight()/80*55);
+			g.drawString("| MSC | Polo Garage", getWidth()/16*3+10, getHeight()/80*58);
+			g.drawString("| MSC | Polo Garage", getWidth()/16*3+10, getHeight()/80*61);
+			g.drawString("| MSC	| Sbisa Underground", getWidth()/16*3+10, getHeight()/80*64);
+			g.drawString("| Sbisa Complex", getWidth()/16*3+10, getHeight()/80*67);
+			g.drawString("| Sbisa Complex", getWidth()/16*3+10, getHeight()/80*70);
+			g.drawString("| Pavilion", getWidth()/16*3+10, getHeight()/80*73);
+			
 		}
 	}
 	
@@ -208,26 +271,28 @@ public class Panel extends JPanel implements  MouseListener, KeyListener{
 		g.drawRect(getWidth()/3+getWidth()/7+10, getHeight()/2-getHeight()/16, getWidth()/5*2, getHeight()/11);
 		g.drawRect(getWidth()/3+getWidth()/7+10, getHeight()/4*3-getHeight()/16, getWidth()/5*2, getHeight()/11);
 		 */
-		
-		if(x>getWidth()/10 && x <getWidth()/10+getWidth()/3-getWidth()/13 && y > getHeight()/3+50 && y < getHeight()/3+50+ getHeight()/8) {
+		System.out.println("w: "+getWidth() + " h: "+getHeight());
+		if(choice == 0 && x>getWidth()/10 && x <getWidth()/10+getWidth()/3-getWidth()/13 && y > getHeight()/3+50 && y < getHeight()/3+50+ getHeight()/8) {
 			choice = 1;
 		}
-		else if(x>getWidth()/10 && x <getWidth()/10+getWidth()/3-getWidth()/13 && y > getHeight()/2+50 && y < getHeight()/3+50+ getHeight()/8) {
+		else if(choice == 0 && x>getWidth()/10 && x <getWidth()/10+getWidth()/3-getWidth()/13 && y > getHeight()/2+50 && y < getHeight()/2+50+ getHeight()/8) {
 			choice = 2;
 		}
-		else if(x>getWidth()/10 && x <getWidth()/10+getWidth()/3-getWidth()/13 && y > getHeight()/3*2+50 && y < getHeight()/3+50+ getHeight()/8) {
+		else if(choice == 0 && x>getWidth()/10 && x <getWidth()/10+getWidth()/3-getWidth()/13 && y > getHeight()/3*2+50 && y < getHeight()/3*2+50+ getHeight()/8) {
 			choice = 3;
 		}
-		else if(x>getWidth()/3+getWidth()/7+10 && x <getWidth()/3+getWidth()/7+10+getWidth()/5*2 && y > getHeight()/5-5 && y < getHeight()/5-5+getHeight()/11) {
+		else if(choice == 0 && x>getWidth()/3+getWidth()/7+10 && x <getWidth()/3+getWidth()/7+10+getWidth()/5*2 && y > getHeight()/5-5 && y < getHeight()/5-5+getHeight()/11) {
 			choice = 4;
 		}
-		else if(x>getWidth()/3+getWidth()/7+10 && x <getWidth()/3+getWidth()/7+10+getWidth()/5*2 && y > getHeight()/2-getHeight()/16 && y < getHeight()/2-getHeight()/16+getHeight()/11) {
+		else if( choice == 0 && x>getWidth()/3+getWidth()/7+10 && x <getWidth()/3+getWidth()/7+10+getWidth()/5*2 && y > getHeight()/2-getHeight()/16 && y < getHeight()/2-getHeight()/16+getHeight()/11) {
 			choice = 5;
 		}
-		else if(x>getWidth()/3+getWidth()/7+10 && x <getWidth()/3+getWidth()/7+10+getWidth()/5*2 && y > getHeight()/4*3-getHeight()/16 && y < getHeight()/4*3-getHeight()/16+getHeight()/11) {
+		else if(choice == 0 && x>getWidth()/3+getWidth()/7+10 && x <getWidth()/3+getWidth()/7+10+getWidth()/5*2 && y > getHeight()/4*3-getHeight()/16 && y < getHeight()/4*3-getHeight()/16+getHeight()/11) {
 			choice = 6;
 		}
 		
+		System.out.println(choice);
+		repaint();
 	}
 
 	@Override
