@@ -298,17 +298,22 @@ public class Panel extends JPanel implements  MouseListener, KeyListener{
 			switch(food_page) {
 			
 			case 1:
-			g.setFont(exo_r);
+			
+			Font ft = exo_m.deriveFont(25f);
+			g.setFont(ft);
 			g.drawString("Dining Halls:", getWidth()/18, getHeight()/40*15-20);
-			g.drawLine(getWidth()/18, getHeight()/40*15-13, getWidth()/8+5, getHeight()/40*15-13);
+			g.drawLine(getWidth()/18, getHeight()/40*15-13, getWidth()/8+35, getHeight()/40*15-13);
+			g.drawString("Retail Swipes:",getWidth()/18, getHeight()/80*43);
+			g.drawLine(getWidth()/18, getHeight()/80*44-5, getWidth()/7+30, getHeight()/80*44-5);
+			
+			g.setFont(exo_r);
 			g.drawString("·  Sbisa", getWidth()/18, getHeight()/80*33);
 			g.drawString("·  Commons",getWidth()/18, getHeight()/80*36);
 			g.drawString("·  Duncans",getWidth()/18, getHeight()/80*39);
 			g.drawString("| Northside", getWidth()/4, getHeight()/80*33);
 			g.drawString("| Southside", getWidth()/4, getHeight()/80*36);
 			g.drawString("| Southside", getWidth()/4, getHeight()/80*39);
-			g.drawString("Retail Swipes:",getWidth()/18, getHeight()/80*43);
-			g.drawLine(getWidth()/18, getHeight()/80*44-5, getWidth()/7, getHeight()/80*44-5);
+			
 			g.drawString("·  Cabo's Grill ",getWidth()/18, getHeight()/80*46);
 			g.drawString("·  Pom & Honey      ",getWidth()/18, getHeight()/80*49);
 			g.drawString("·  Rev's Grill      ",getWidth()/18, getHeight()/80*52);
@@ -347,9 +352,15 @@ public class Panel extends JPanel implements  MouseListener, KeyListener{
 			break;
 			
 			case 2:
-				g.setFont(exo_r);
+				
+				ft = exo_m.deriveFont(25f);
+				g.setFont(ft);
 				g.drawString("Food Trucks:", getWidth()/18, getHeight()/40*15-20);
-				g.drawLine(getWidth()/18, getHeight()/40*15-13, getWidth()/8+15, getHeight()/40*15-13);
+				g.drawString("Others:", getWidth()/18, getHeight()/80*49);
+				g.drawLine(getWidth()/18, getHeight()/80*50-1, getWidth()/8-10, getHeight()/80*50-1);
+				g.drawLine(getWidth()/18, getHeight()/40*15-13, getWidth()/7+25, getHeight()/40*15-13);
+				
+				g.setFont(exo_r);
 				g.drawString("·  Taqueria Puro Potosino", getWidth()/18, getHeight()/80*33);
 				g.drawString("·  Abu Omar Halal",getWidth()/18, getHeight()/80*36);
 				g.drawString("·  Bad Chx",getWidth()/18, getHeight()/80*39);
@@ -361,8 +372,6 @@ public class Panel extends JPanel implements  MouseListener, KeyListener{
 				g.drawString("| Zachry", getWidth()/4, getHeight()/80*42);
 				g.drawString("| Zachry", getWidth()/4, getHeight()/80*45);
 			
-				g.drawString("Others:", getWidth()/18, getHeight()/80*49);
-				g.drawLine(getWidth()/18, getHeight()/80*50-1, getWidth()/9-3, getHeight()/80*50-1);
 				g.drawString("·  Starbucks", getWidth()/18, getHeight()/80*52);
 				g.drawString("·  Smoothie King",getWidth()/18, getHeight()/80*55);
 				g.drawString("·  Shake Smart",getWidth()/18, getHeight()/80*58);
