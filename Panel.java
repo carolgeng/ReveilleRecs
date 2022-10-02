@@ -407,7 +407,7 @@ public class Panel extends JPanel implements  MouseListener, KeyListener{
 
  			g.setFont(cursive);
  			g.setColor(Color.white);
- 			g.drawString("Landscape", getWidth()*3/9, getHeight()/6);
+ 			g.drawString("Landmarks", getWidth()*3/9, getHeight()/6);
 
  			g.setFont(exo_m);
  			g.drawString("o n    c a m p u s", getWidth()*6/15, getHeight()/4);
